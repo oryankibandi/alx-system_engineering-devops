@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#prints Best School using while loop
+
+c=0
+while [ $c -lt 10 ]
+do
+	echo "Best School"
+	((c++))
+done

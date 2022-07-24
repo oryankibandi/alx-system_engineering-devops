@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#Displays contents of a directory
+
+shopt -u dotglob
+for file in *
+do
+    if [ -e "$file" ]
+    then
+	echo "$file" | cut -d "-" -f 2-
+    fi
+done
