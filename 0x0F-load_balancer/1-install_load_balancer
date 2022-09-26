@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Installs and configures HAproxy on a new Ubuntu Server
+
+sudo apt-get install --no-install-recommends software-properties-common
+sudo add-apt-repository ppa:vbernat/haproxy-2.6
+apt-get install haproxy=2.6.\*
+
+FRONT="frontend 27672-lb-01\n\tbind *:80\n\tmode http\n\n\tdefault_backend web_backend"
+BACK="backend web-backend\n\tbalance roundrobin\n\tserver 27672-web-01 3.235.30.193:80 check\n\tserver 27672-web-02 35.170.82.237:80 check"
+
+sudo echo $FRONT >> /etc/haproxy/haproxy.cfg
+sudo echo $BACK >> /etc/haproxy/haproxy.cfg
+
+sudo systemctl restart haproxy
