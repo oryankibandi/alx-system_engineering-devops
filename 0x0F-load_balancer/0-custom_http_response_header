@@ -4,6 +4,6 @@
 # shell check disable=SC2154
 sudo apt-get -y update
 sudo apt-get -y install nginx
-ufw allow 'Nginx HTTP'
+sudo ufw allow 'Nginx HTTP'
 sudo sed 's/http {/&\n\tadd_header X-Served-By $host/' /etc/nginx/nginx.conf
 sudo service nginx start
