@@ -6,6 +6,8 @@ sudo add-apt-repository -y ppa:vbernat/haproxy-2.6
 sudo apt-get -y update
 apt-get install -y haproxy=2.6.\*
 
+echo "ENABLED=1" > /etc/default/haproxy
+
 FRONT="frontend 27672-lb-01\n\tbind *:80\n\tmode http\n\n\tdefault_backend web_backend"
 BACK="backend web-backend\n\tbalance roundrobin\n\tserver 27672-web-01 3.235.30.193:80 check\n\tserver 27672-web-02 35.170.82.237:80 check"
 
