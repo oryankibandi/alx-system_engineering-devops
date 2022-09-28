@@ -5,5 +5,5 @@
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
-sudo sed 's/http {/&\n\tadd_header X-Served-By $hostname/' /etc/nginx/nginx.conf
+sudo sed -i 's/http {/&\n\tadd_header X-Served-By $HOSTNAME;/' /etc/nginx/nginx.conf
 sudo service nginx start
