@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Generates a dump file of all databases and compreses them
+
+mysqldump -u root -p "$1" --all-databases > backup.sql
+filename=$(date +%Y-%m-%d).tar.gz
+tar -cvzf "$filename" backup.sql
