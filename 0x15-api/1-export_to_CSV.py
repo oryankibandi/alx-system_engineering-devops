@@ -23,7 +23,7 @@ if __name__ == '__main__':
                         .format(user_id)).text
     todos = json.loads(res2)
 
-    with open('{}.csv'.format(user_id), 'w', encoding='UTF8',  newline='') as f:
+    with open('{}.csv'.format(user_id), 'w', encoding='UTF8', newline='') as f:
         writer = csv.writer(f, quoting=csv.QUOTE_NONNUMERIC)
         for todo in todos:
             line = ['{}'.format(user_id), '{}'.format(username),
