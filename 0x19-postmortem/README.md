@@ -4,7 +4,7 @@
 
 The outage ran from **25th Oct, 2022 10:00pm EAT** to **26th Oct, 2022 1:00pm EAT**.
 
-This outage deniend customers access to the website features including authentication, generation off reports and adding new information.
+This outage denied customers access to the website features including authentication, generation of reports and adding new information.
 
 The root cause was expired SSL Certificates.
 
@@ -23,9 +23,9 @@ SSL certificates were renewed and the application was accessible again. To preve
 
 ## Corrective Measures
 
-All SSL certificates issued to a new domain must be renewed automatically via setting up a cronjob to renew them at 12:00am everyday.
+All SSL certificates issued to a new domain must be renewed automatically via setting up a cronjob to renew them at 12:00am every day.
 
-Alerts on low activity on the servers should be set up to inform the relevant personel.
+Alerts on low activity on the servers should be set up to inform the relevant personnel.
 
 ### steps
 
